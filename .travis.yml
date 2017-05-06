@@ -1,6 +1,8 @@
 language: java
+jdk: oraclejdk8
 
 install: true
+script: ./mvnw clean install
 
 cache:
   directories:
@@ -11,4 +13,4 @@ script:
   
 deploy:
   - provider: heroku
-  -  api_key: "29bbc678-50d4-4be2-8145-a8a67ae8fd5a"
+  -  api_key: "9a02f373-d95d-43a6-b7ac-6f80609dce7e"
