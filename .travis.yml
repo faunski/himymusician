@@ -1,10 +1,14 @@
+language: java
+
 install: true
-script: ./mvnw clean install
 
 cache:
   directories:
   - $HOME/.m2
   
 script:
-  - ./mvnw clean install
-  - bash <(curl -s https://codecov.io/bash)
+  - mvn test -B
+  
+deploy:
+  - provider: heroku
+  -  api_key: "29bbc678-50d4-4be2-8145-a8a67ae8fd5a"
