@@ -9,6 +9,12 @@
 
     <name>soitamme</name>
 
+	<repositories>
+	<repository>
+       <id>dependency</id>
+       <url>file:///$soitamme/target/dependency</url>
+		</repository>
+	</repositories>
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,6 +27,11 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+		<dependency>
+      <groupId>json-simple</groupId>
+      <artifactId>json-simple-1.1.1</artifactId>
+      <version>1.1.1</version>
+  </dependency>
     </dependencies>
 
     <build>

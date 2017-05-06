@@ -17,14 +17,22 @@ import java.sql.SQLException;
 public class Calendar {
     
     
-    public static void newEvent(String email, String pass) throws ClassNotFoundException, SQLException {
+    public static void newEvent(String email, String name, String sTime, String eTime, String sDate, String eDate, String phone, String customer, String message) throws ClassNotFoundException, SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://bits.cqsscjueysvj.eu-west-1.rds.amazonaws.com:3306/project?" + "user=root&password=starbucks");
+            Connection con = DriverManager.getConnection("jdbc:mysql://himymusician.cqsscjueysvj.eu-west-1.rds.amazonaws.com:3306?" + "user=root&password=starbucks");
             PreparedStatement pst = con.prepareStatement("INSERT INTO events " + 
-                "VALUES (?,?)");
+                "VALUES (?,?,?,?,?,?,?,?,?,?)");
             pst.setString(1, email);
-            pst.setString(2, pass);
+            pst.setString(2, phone);
+            pst.setString(3, name);
+            pst.setString(4, sDate);
+            pst.setString(5, eDate);
+            pst.setString(6, sTime);
+            pst.setString(7, eTime);
+            pst.setString(8, message);
+            pst.setString(9, null);
+            pst.setString(10, customer);
             pst.executeUpdate();
        /*     PreparedStatement pst = con.prepareStatement("insert into login values(email=?, pass=?)");
             pst.setString(1, email);
@@ -33,7 +41,8 @@ public class Calendar {
 */
         } catch (Exception e) {
             e.printStackTrace();
-        }
+
+}
 
     }
 }

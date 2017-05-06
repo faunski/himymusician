@@ -10,5 +10,6 @@ script:
   - mvn test -B
   
 deploy:
-  - provider: heroku
-  -  api_key: "29bbc678-50d4-4be2-8145-a8a67ae8fd5a"
+  provider: heroku
+  api_key: 
+    secure: "29bbc678-50d4-4be2-8145-a8a67ae8fd5a"
