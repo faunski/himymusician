@@ -154,7 +154,21 @@ a:focus {
   padding: 100px 0;
   text-align: center;
   color: white;
-  background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+  background: url(../img/intro-bgolder.jpg) no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.intro2 {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  background: url(../img/guitar1.jpg) no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -224,6 +238,30 @@ a:focus {
     width: 100%;
   }
   .intro .intro-body .intro-text {
+    font-size: 30px;
+  }
+}
+.intro2 .intro2-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.intro2 .intro2-body .brand-heading {
+  font-size: 40px;
+}
+.intro2 .intro2-body .intro2-text {
+  font-weight: light;
+  font-family: 'Abel';
+}
+@media (min-width: 768px) {
+  .intro2 {
+    height: 100%;
+    padding: 0;
+  }
+  .intro2 .intro2-body .brand-heading {
+    font-size: 120px;
+    width: 100%;
+  }
+  .intro2 .intro2-body .intro2-text {
     font-size: 30px;
   }
 }
@@ -297,7 +335,7 @@ a:focus {
 .group-section {
   padding: 50px 0;
   color: white;
-  background: url(../img/jazz.svg) no-repeat center center scroll;
+  background: url(../img/damn.jpg) no-repeat center center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -396,4 +434,78 @@ body {
   font-size: 1.11em;
 }
 }
+#search {
+  float: right;
+  margin-top: 9px;
+  width: 250px;
+}
 
+.search {
+  padding: 5px 0;
+  width: 230px;
+  height: 30px;
+  position: relative;
+  left: 10px;
+  float: left;
+  line-height: 22px;
+}
+
+.search input {
+  position: absolute;
+  width: 0px;
+  float: Left;
+  margin-left: 210px;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  height: 30px;
+  line-height: 1px;
+  padding: 0px 2px 0 2px;
+  border-radius:1px;
+}
+
+.search:hover input, .search input:focus {
+  width: 200px;
+  margin-left: 0px;
+}
+.btn2 {
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  border-radius:1px;
+  background-color: #545454;
+  border-color: #545454;
+}
+
+.well-searchbox {
+  height: 240px;
+  width: 500px;
+  position: static;
+  z-index: 80;
+  top: 90px;
+  right: 100px;
+  background: rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-left: 120px;
+  margin-top: 10px;
+  font-family: Arial;
+  font-size: 20px;
+  padding-left: 65px;
+  padding-top: 30px;
+}
+.btn{
+  background-color: #545454;
+  border-color: #545454;
+}
+.well-searchbox label {
+  color: #fff;
+}
+.form-control{
+  width: 200px;
+}
