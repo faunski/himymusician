@@ -1,0 +1,72 @@
+#naft{
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 200px 0;
+    text-align: center;
+    color: white;
+    background: url(../img/naft.jpg) no-repeat bottom center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+
+}
+#rap{
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 200px 0;
+    text-align: center;
+    color: white;
+    background: url(../img/rap.jpg) no-repeat bottom center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+#rock{
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 200px 0;
+    text-align: center;
+    color: white;
+    background: url(../img/rock.jpg) no-repeat bottom center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+#pup{
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 200px 0;
+    text-align: center;
+    color: white;
+    background: url(../img/pup.jpg) no-repeat bottom center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+#edm{
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 200px 0;
+    text-align: center;
+    color: white;
+    background: url(../img/edm.jpg) no-repeat bottom center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
