@@ -2,7 +2,7 @@
  $(window).on("load", function() {
            $('#mycalendar').monthly({
              dataType: 'xml',
-             xmlUrl: '../events.xml',
+             xmlUrl: './events.xml',
              weekStart: 'Mon'
          });
          $('#timepicker1').timepicker({
