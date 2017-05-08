@@ -1,8 +1,8 @@
 
 $(window).load(function() {
            $('#mycalendar').monthly({
-             dataType: 'json',
-             jsonUrl: '../php/calendar.php',
+             dataType: 'xml',
+             xmlUrl: '../events.xml',
              weekStart: 'Mon'
          });
          $('#timepicker1').timepicker({
