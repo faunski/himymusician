@@ -1,5 +1,5 @@
 
-$(window).load(function() {
+ $(window).on("load", function() {
            $('#mycalendar').monthly({
              dataType: 'xml',
              xmlUrl: '../events.xml',
