@@ -21,6 +21,7 @@ public class Search {
     private String query, band, search;
     
     
+
     public ArrayList<Band> searchGenre(String searchGenre) throws SQLException {
         ArrayList<String> bands = new ArrayList<String>();
         ArrayList<Band> bandsInfo = new ArrayList<Band>();
@@ -41,8 +42,8 @@ public class Search {
                 band = rs.getString(search);
                 bands.add(band);
             }
-            for (String band : bands) {
-                rs = stmt.executeQuery("select " + band + "from BANDS");
+            for (String banda : bands) {
+                rs = stmt.executeQuery("select " + banda + "from BANDS");
                 //check these in db to make sure theyre right
                 name = rs.getString("NAME");
                 genre = rs.getString("GENRE");
@@ -61,4 +62,5 @@ public class Search {
         }
         return bandsInfo;
     }
+
 }
