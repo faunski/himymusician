@@ -21,21 +21,36 @@ public class Search {
     private String query, band, search;
     
     
-    public ArrayList<String> searchGenre(String searchGenre) throws SQLException {
+    public ArrayList<Band> searchGenre(String searchGenre) throws SQLException {
         ArrayList<String> bands = new ArrayList<String>();
+        ArrayList<Band> bandsInfo = new ArrayList<Band>();
+        ResultSet rs;
+        String name, genre, email, phone, link;
+        
         Statement stmt = null;
         search = searchGenre.toUpperCase();
         Connection con = DriverManager.getConnection("jdbc:mysql://himymusician.cqsscjueysvj.eu-west-1.rds.amazonaws.com:3306?" + "user=root&password=starbucks");
         
-        query = "select " + search + "from ";
+        query = "select " + search + "from BANDS";
         
         try {
             stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
+            rs = stmt.executeQuery(query);
             
             while(rs.next()) {
                 band = rs.getString(search);
                 bands.add(band);
+            }
+            for (String band : bands) {
+                rs = stmt.executeQuery("select " + band + "from BANDS");
+                //check these in db to make sure theyre right
+                name = rs.getString("NAME");
+                genre = rs.getString("GENRE");
+                email = rs.getString("EMAIL");
+                phone = rs.getString("PHONE");
+                link = rs.getString("LINK");
+                
+                bandsInfo.add(new Band(name, genre, email, phone, link));
             }
         } catch (SQLException e) {
             System.out.println("error");
@@ -44,6 +59,6 @@ public class Search {
                 stmt.close();
             }
         }
-        return bands;
+        return bandsInfo;
     }
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<monthly>
+
+    <event>
+        <id>1</id>
+        <name>Event Name</name>
+        <startdate>2017-5-8</startdate>
+        <enddate>2017-5-8</enddate> <!-- optional -->
+        <starttime>9:00</starttime> <!-- optional (military time) -->
+        <endtime>13:00</endtime> <!-- optional (military time) -->
+        <color>#ffb128</color> <!-- optional -->
+        <url>http://www.yourlink.com</url> <!-- optional -->
+    </event>
+    
+    <event>
+        <id>2</id>
+        <name>A Gig</name>
+        <startdate>2017-5-10</startdate>
+        <enddate>2017-5-10</enddate> <!-- optional -->
+        <starttime>9:00</starttime> <!-- optional (military time) -->
+        <endtime>18:00</endtime> <!-- optional (military time) -->
+        <color>#ffb804</color> <!-- optional -->
+        <url>http://localhost:8084/soitamme/bands/cabbage.html</url> <!-- optional -->
+    </event>
+    
+    <event>
+        <id>3</id>
+        <name>A Gig</name>
+        <startdate>2017-5-10</startdate>
+        <enddate>2017-5-10</enddate> <!-- optional -->
+        <starttime>9:00</starttime> <!-- optional (military time) -->
+        <endtime>18:00</endtime> <!-- optional (military time) -->
+        <color>#af6dgg</color> <!-- optional -->
+        <url>http://localhost:8084/soitamme/bands/cabbage.html</url> <!-- optional -->
+    </event>
+
+</monthly>
