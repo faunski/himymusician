@@ -11,13 +11,11 @@ package com.mycompany.soitamme;
  */
 public class Band {
     
-    private String name, genre, email, phone, link;
+    private String name, genre, link;
     
-    public Band(String giveName, String giveGenre, String giveEmail, String givePhone, String giveLink) {
+    public Band(String giveName, String giveGenre, String giveLink) {
         this.name = giveName;
         this.genre = giveGenre;
-        this.email = giveEmail;
-        this.phone = givePhone;
         this.link = giveLink;
     }
 
@@ -29,16 +27,9 @@ public class Band {
         return genre;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
     public String getLink() {
         return link;
     }
     
 }
+

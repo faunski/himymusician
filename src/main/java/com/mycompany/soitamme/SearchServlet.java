@@ -53,11 +53,13 @@ public class SearchServlet extends HttpServlet {
         
         for(Band band : bands){
             sb.append("<a href=\""+band.getLink()+"\" class=\"\">" + band.getName()+ "</a> <br>");
+            System.out.println(sb);
         }
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
         out.write(sb.toString());
-        }
+        }   
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -76,7 +78,7 @@ public class SearchServlet extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }   
     }
 
     /**

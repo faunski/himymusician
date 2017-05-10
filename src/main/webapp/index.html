@@ -56,6 +56,7 @@
         <script src="js/grayscale.min.js"></script>
         <script src="js/bootstrap-timepicker.min.js"></script>
         <script type="text/javascript" src="js/monthly.js"></script>
+        
 
 
     </head>
@@ -166,11 +167,11 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label">Genres</label>
                         <div class="col-md-8">
-                            <select class="form-control">
+                            <select class="form-control" id="genreselect">
                                 <option value="">All</option>
                                 <option value="">Trap / Dubstep</option>
                                 <option value="">Rap / Hiphop</option>
-                                <option value="">Funk / Disco / Electro Pop</option>
+                                <option value="">Funk</option>
                                 <option value="">Black Metal</option>
                                 <option value="">Pop / Rock</option>
                                 <option value="">Electro Swing</option>
@@ -179,9 +180,9 @@
                             </select>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
                     </section>
-        
+            <div id="search-result"></div>
             
             <section id="calendar" class="container content-section text-center" style="padding-top: 65px;padding-left: 0;padding-right: 0">
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservation</button>
@@ -213,6 +214,7 @@
          </div>
                
       </footer>
-         
+   <script type="text/javascript" src="js/search.js"></script>
    </body>
 </html>
+
