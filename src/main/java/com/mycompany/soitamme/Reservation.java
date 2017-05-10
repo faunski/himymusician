@@ -17,6 +17,8 @@ import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +30,13 @@ import javax.servlet.http.HttpServletResponse;
  * @author Samu
  */
 public class Reservation extends HttpServlet {
+    private ServletContext context;
+    
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        this.context = config.getServletContext();
+        //To change body of generated methods, choose Tools | Templates.
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,16 +45,17 @@ public class Reservation extends HttpServlet {
         System.out.println("test1");
 
         String email = request.getParameter("email");
+        System.out.println(email);
         String name = request.getParameter("name");
-        String stime = request.getParameter("stime");
-        String etime = request.getParameter("etime");
-        String sdate = request.getParameter("sdate");
+        String stime = request.getParameter("starttime");
+        String etime = request.getParameter("endtime");
+        String sdate = request.getParameter("startdate");
         String phone = request.getParameter("phone");
         String url = "www.test.com";
         String message = request.getParameter("message");
         String color = "ffffff";
         String band = "Lucio";
-        
+        System.out.println("test2");
                 
         String[] split = sdate.split("/");
         String temp = split[0];

@@ -6,7 +6,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>reservation</servlet-name>
-        <url-pattern>/reservation</url-pattern>
+        <url-pattern>/bands/reservation</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
