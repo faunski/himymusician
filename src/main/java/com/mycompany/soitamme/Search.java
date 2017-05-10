@@ -17,42 +17,43 @@ import java.util.ArrayList;
  * @author Kimi
  */
 public class Search {
-
+    
     private String query, band, search;
+    
+    
 
     public ArrayList<Band> searchGenre(String searchGenre) throws SQLException {
         ArrayList<String> bands = new ArrayList<String>();
         ArrayList<Band> bandsInfo = new ArrayList<Band>();
         ResultSet rs;
         String name, genre, email, phone, link;
-
+        
         Statement stmt = null;
-        search = searchGenre.toUpperCase();
-        Connection con = DriverManager.getConnection("jdbc:mysql://himymusician.cqsscjueysvj.eu-west-1.rds.amazonaws.com:3306?" + "user=root&password=starbucks");
-
-        query = "select " + search + "from BANDS";
-
+        search = searchGenre;
+        Connection con = DriverManager.getConnection("jdbc:mysql://himymusician.cqsscjueysvj.eu-west-1.rds.amazonaws.com:3306/himymusician?" + "user=root&password=starbucks");
+        
+        query = "SELECT * FROM band WHERE genre ='"+ search +"'";
         try {
             stmt = con.createStatement();
             rs = stmt.executeQuery(query);
-
-            while (rs.next()) {
-                band = rs.getString(search);
+            
+            while(rs.next()) {
+                band = rs.getString("name");
                 bands.add(band);
             }
             for (String banda : bands) {
-                rs = stmt.executeQuery("select " + banda + "from BANDS");
+                rs = stmt.executeQuery("SELECT * FROM band WHERE NAME ='"+banda+"'");
                 //check these in db to make sure theyre right
-                name = rs.getString("NAME");
-                genre = rs.getString("GENRE");
-                email = rs.getString("EMAIL");
-                phone = rs.getString("PHONE");
-                link = rs.getString("LINK");
-
-                bandsInfo.add(new Band(name, genre, email, phone, link));
+                while(rs.next()){
+                name = rs.getString("name");
+                genre = rs.getString("genre");
+                link = rs.getString("url");
+                
+                bandsInfo.add(new Band(name, genre, link));
+                }
             }
         } catch (SQLException e) {
-            System.out.println("error");
+            System.out.println(e);
         } finally {
             if (stmt != null) {
                 stmt.close();
@@ -62,3 +63,5 @@ public class Search {
     }
 
 }
+
+
