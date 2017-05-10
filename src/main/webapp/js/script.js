@@ -1,6 +1,6 @@
 $(window).on('load', function() {
     
-           $.get('loadcal');
+           $.post('loadcal');
             
            $('#mycalendar').monthly({
              dataType: 'xml',

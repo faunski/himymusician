@@ -10,6 +10,7 @@ package com.mycompany.soitamme;
  * @author Samu
  */
 import java.io.File;
+import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -24,20 +25,37 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.transform.TransformerConfigurationException;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-@WebServlet(name = "loadcal", urlPatterns = {"/loadcal"})
 public class LoadCal extends HttpServlet {
-
-    public static void doGet(String argv[]) throws ClassNotFoundException, SQLException, ParserConfigurationException, TransformerException {
-
-        // create our mysql database connection
-        Class.forName("com.mysql.jdbc.Driver");
+    
+    private ServletContext context;
+    
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        this.context = config.getServletContext();
+        //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
+    throws IOException {
+        try {
+            // create our mysql database connection
+            Class.forName("com.mysql.jdbc.Driver");
+        
         Connection con = DriverManager.getConnection("jdbc:mysql://himymusician.cqsscjueysvj.eu-west-1.rds.amazonaws.com:3306/himymusician?" + "user=root&password=starbucks");
 
         // our SQL SELECT query. 
@@ -110,7 +128,7 @@ public class LoadCal extends HttpServlet {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File("events.xml"));
+        StreamResult result = new StreamResult(new File("./events.xml"));
 
         // Output to console for testing
         // StreamResult result = new StreamResult(System.out);
@@ -119,5 +137,9 @@ public class LoadCal extends HttpServlet {
         System.out.println("File saved!");
 
     }
+         catch (ClassNotFoundException | SQLException | ParserConfigurationException | TransformerException ex) {
+            Logger.getLogger(LoadCal.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
+}
 }

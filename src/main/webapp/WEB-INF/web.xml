@@ -4,9 +4,22 @@
         <servlet-name>reservation</servlet-name>
         <servlet-class>com.mycompany.soitamme.Reservation</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loadcal</servlet-name>
+        <servlet-class>com.mycompany.soitamme.LoadCal</servlet-class>
+        <init-param>
+        <param-name>readonly</param-name>
+        <param-value>false</param-value>
+        </init-param>
+    </servlet>
     <servlet-mapping>
         <servlet-name>reservation</servlet-name>
         <url-pattern>/bands/reservation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loadcal</servlet-name>
+        <url-pattern>/loadcal</url-pattern>
+        <http-method>POST</http-method>
     </servlet-mapping>
     <session-config>
         <session-timeout>
