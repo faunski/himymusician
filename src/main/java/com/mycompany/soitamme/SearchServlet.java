@@ -25,8 +25,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "SearchServlet", urlPatterns = {"/search"})
 public class SearchServlet extends HttpServlet {
+
     private ServletContext context;
     private Search searchEngine;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -42,21 +44,22 @@ public class SearchServlet extends HttpServlet {
         this.searchEngine = new Search();
         //To change body of generated methods, choose Tools | Templates.
     }
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         String action = request.getParameter("genre");
         StringBuffer sb = new StringBuffer();
-        if(action==null){
+        if (action == null) {
             response.setStatus(HttpServletResponse.SC_NO_CONTENT);
         }
         ArrayList<Band> bands = searchEngine.searchGenre(action);
-        
-        for(Band band : bands){
-            sb.append("<a href=\""+band.getLink()+"\" class=\"\">" + band.getName()+ "</a> <br>");
+
+        for (Band band : bands) {
+            sb.append("<a href=\"" + band.getLink() + "\" class=\"\">" + band.getName() + "</a> <br>");
         }
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-        out.write(sb.toString());
+            out.write(sb.toString());
         }
     }
 

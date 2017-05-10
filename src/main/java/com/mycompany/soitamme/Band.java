@@ -10,9 +10,9 @@ package com.mycompany.soitamme;
  * @author Kimi
  */
 public class Band {
-    
+
     private String name, genre, email, phone, link;
-    
+
     public Band(String giveName, String giveGenre, String giveEmail, String givePhone, String giveLink) {
         this.name = giveName;
         this.genre = giveGenre;
@@ -40,5 +40,5 @@ public class Band {
     public String getLink() {
         return link;
     }
-    
+
 }
