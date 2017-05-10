@@ -1,4 +1,7 @@
 $(window).on('load', function() {
+    
+           $.get('loadcal');
+            
            $('#mycalendar').monthly({
              dataType: 'xml',
              xmlUrl: './events.xml',
