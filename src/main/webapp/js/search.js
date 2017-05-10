@@ -9,7 +9,6 @@ $("#searchBtn").click(function(){
     
     $.get("search?genre="+$("#genreselect option:selected").text(),function(data){
         console.log($("#genreselect option:selected").text());
-        console.log(data);
        $("#search-result").html(data); 
         
     });

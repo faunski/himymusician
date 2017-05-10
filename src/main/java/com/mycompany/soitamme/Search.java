@@ -31,8 +31,11 @@ public class Search {
         Statement stmt = null;
         search = searchGenre;
         Connection con = DriverManager.getConnection("jdbc:mysql://himymusician.cqsscjueysvj.eu-west-1.rds.amazonaws.com:3306/himymusician?" + "user=root&password=starbucks");
-        
+        if (search.equals("All")){
+            query = "SELECT * FROM band";
+        } else {
         query = "SELECT * FROM band WHERE genre ='"+ search +"'";
+        }
         try {
             stmt = con.createStatement();
             rs = stmt.executeQuery(query);
