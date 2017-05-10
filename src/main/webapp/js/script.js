@@ -4,6 +4,51 @@ $(window).on('load', function() {
              xmlUrl: './events.xml',
              weekStart: 'Mon'
          });
+         $('#calendar1').monthly({
+             dataType: 'xml',
+             xmlUrl: './events.xml',
+             weekStart: 'Mon'
+         });
+         $('#calendar2').monthly({
+             dataType: 'xml',
+             xmlUrl: './events.xml',
+             weekStart: 'Mon'
+         });
+         $('#calendar3').monthly({
+             dataType: 'xml',
+             xmlUrl: './events.xml',
+             weekStart: 'Mon'
+         });
+         $('#calendar4').monthly({
+             dataType: 'xml',
+             xmlUrl: './events.xml',
+             weekStart: 'Mon'
+         });
+         $('#calendar5').monthly({
+             dataType: 'xml',
+             xmlUrl: './events.xml',
+             weekStart: 'Mon'
+         });
+         $('#calendar6').monthly({
+             dataType: 'xml',
+             xmlUrl: './events.xml',
+             weekStart: 'Mon'
+         });
+         $('#calendar7').monthly({
+             dataType: 'xml',
+             xmlUrl: './events.xml',
+             weekStart: 'Mon'
+         });
+         $('#calendar8').monthly({
+             dataType: 'xml',
+             xmlUrl: './events.xml',
+             weekStart: 'Mon'
+         });
+         $('#calendar9').monthly({
+             dataType: 'xml',
+             xmlUrl: './events.xml',
+             weekStart: 'Mon'
+         });
          $('#timepicker1').timepicker({
                           minuteStep: 15,
                           appendWidgetTo: 'body',
