@@ -99,23 +99,8 @@ $(window).on('load', function() {
     });
 });
          $('#laheta').click(function() {
-           if ($('#name').val() == 'Yksityinen tapahtuma') {
-              var color = '#4286f4'
-              }
-            if ($('#name').val() == 'Julkinen tilaisuus') {
-              var color = '#fc4646'
-              }
-            if ($('#name').val() == 'Ravintolaesiintyminen') {
-              var color = '#26b74f'
-              }
            
-          $.post("../php/soitamme.php", $("#myForm").serialize() +'&color=' + color, function(data) {
-             $('#alert').remove();
-             if (data == 'success') {
-               $('#myModal').modal('hide');
-             } else
-               $('.modal-footer').prepend("<div id='alert' style='float: left;' class='alert alert-danger'>" + data + "</div>");
-           });
+          $.post("reservation", $("#myForm").serialize());
              });
 
 $('.kirjaudu').on('submit', function (e) {

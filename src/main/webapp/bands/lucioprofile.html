@@ -44,15 +44,15 @@
 
     <link href="../css/grayscale.css" rel="stylesheet">
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Plugin JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+
     <!-- Theme JavaScript -->
     <script src="../js/grayscale.min.js"></script>
     <script src="../js/bootstrap-timepicker.min.js"></script>
@@ -223,14 +223,10 @@
                 <h4 class="modal-title">Reservation</h4>
             </div>
             <div class="modal-body">
-                <form id='myForm'>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
-                        <input type="text" class="form-control" name='customer' placeholder="Mikko Mallikas">
-                    </div>
+                <form id='myForm' action='reservation' method='post'>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="email" name='email' placeholder="mikko.mallikas@esimerkki.fi">
+                        <input type="email" class="form-control" id="email" name='email' placeholder="mikko.mallikas@example.fi">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Phone</label>
@@ -247,37 +243,36 @@
 
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Tietoa</label>
+                        <label for="exampleInputEmail1">Information</label>
                         <textarea style="resize: vertical; height: 100px; overflow-y:hidden;" class="form-control" id="message" name='message' placeholder='Esittäkää toiveenne bändin koosta, soiton määrästä (esim. 3x45 min) ja musiikin tyylistä, sekä muita mahdollisia kommentteja.'></textarea>
                     </div>
                     <div class='form-group'>
-                        <label for="exampleInputEmail1">Aloitusaika</label>
+                        <label for="exampleInputEmail1">Starting time</label>
                         <div class="input-group bootstrap-timepicker timepicker">
                             <input id="timepicker1" type="text" name='starttime' class="form-control input-small timepicker">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                         </div>
                         <br>
-                        <label for="exampleInputEmail1">Lopetusaika</label>
+                        <label for="exampleInputEmail1">Ending time</label>
                         <div class="input-group bootstrap-timepicker timepicker">
                             <input id="timepicker2" type="text" name='endtime' class="form-control input-small timepicker">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                         </div>
                         <br>
                         <div>
-                            <label for="exampleInputEmail1">Päivämäärä</label>
-                            <div class='input-group'>
-                                <input type="text" id="mytarget" placeholder="KK/PP/VVVV" name='startdate' class='form-control'>
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                            </div>
-                            <div class="monthly" id="calendar9"></div>
-                        </div>
+                                 <label for="exampleInputEmail1">Date</label>
+                                 <div class='input-group'>
+                                    <input type="text" id="mytarget" placeholder="MM/DD/YYYY" name='startdate' class='form-control'>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                 </div>
+                                 <div class="monthly" id="mycalendar2"></div>
+                              </div>
                     </div>
+                    <button type="submit" id="laheta" value="submit" class="btn btn-default" data-dismiss="modal">Send</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" id='laheta' class="btn btn-default">Lähetä</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Sulje</button>
-            </div>
+
         </div>
     </div>
 </div>
@@ -294,7 +289,7 @@
 <section id="calendar" class="container content-section text-center" style="padding-top: 65px;padding-left: 0;padding-right: 0">
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reservation</button>
     <br><br><br><br>
-    <div class="monthly" id="mycalendar"></div>
+    <div class="monthly" id="calendar9"></div>
 </section>
 <!-- Contact Section -->
 
