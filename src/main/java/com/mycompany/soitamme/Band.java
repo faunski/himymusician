@@ -20,4 +20,25 @@ public class Band {
         this.phone = givePhone;
         this.link = giveLink;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getLink() {
+        return link;
+    }
+    
 }
