@@ -17,28 +17,26 @@ import java.util.ArrayList;
  * @author Kimi
  */
 public class Search {
-    
+
     private String query, band, search;
-    
-    
 
     public ArrayList<Band> searchGenre(String searchGenre) throws SQLException {
         ArrayList<String> bands = new ArrayList<String>();
         ArrayList<Band> bandsInfo = new ArrayList<Band>();
         ResultSet rs;
         String name, genre, email, phone, link;
-        
+
         Statement stmt = null;
         search = searchGenre.toUpperCase();
         Connection con = DriverManager.getConnection("jdbc:mysql://himymusician.cqsscjueysvj.eu-west-1.rds.amazonaws.com:3306?" + "user=root&password=starbucks");
-        
+
         query = "select " + search + "from BANDS";
-        
+
         try {
             stmt = con.createStatement();
             rs = stmt.executeQuery(query);
-            
-            while(rs.next()) {
+
+            while (rs.next()) {
                 band = rs.getString(search);
                 bands.add(band);
             }
@@ -50,7 +48,7 @@ public class Search {
                 email = rs.getString("EMAIL");
                 phone = rs.getString("PHONE");
                 link = rs.getString("LINK");
-                
+
                 bandsInfo.add(new Band(name, genre, email, phone, link));
             }
         } catch (SQLException e) {

@@ -15,14 +15,13 @@ import java.sql.SQLException;
  * @author Samu
  */
 public class Calendar {
-    
-    
+
     public static void newEvent(String email, String name, String sTime, String eTime, String sDate, String eDate, String phone, String customer, String message) throws ClassNotFoundException, SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://himymusician.cqsscjueysvj.eu-west-1.rds.amazonaws.com:3306?" + "user=root&password=starbucks");
-            PreparedStatement pst = con.prepareStatement("INSERT INTO events " + 
-                "VALUES (?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement pst = con.prepareStatement("INSERT INTO events "
+                    + "VALUES (?,?,?,?,?,?,?,?,?,?)");
             pst.setString(1, email);
             pst.setString(2, phone);
             pst.setString(3, name);
@@ -34,15 +33,15 @@ public class Calendar {
             pst.setString(9, null);
             pst.setString(10, customer);
             pst.executeUpdate();
-       /*     PreparedStatement pst = con.prepareStatement("insert into login values(email=?, pass=?)");
+            /*     PreparedStatement pst = con.prepareStatement("insert into login values(email=?, pass=?)");
             pst.setString(1, email);
             pst.setString(2, pass);
             pst.executeUpdate();
-*/
+             */
         } catch (Exception e) {
             e.printStackTrace();
 
-}
+        }
 
     }
 }
