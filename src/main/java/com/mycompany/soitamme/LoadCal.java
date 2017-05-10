@@ -24,12 +24,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.servlet.http.HttpServlet;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class LoadCal {
+public class LoadCal extends HttpServlet {
     public static void main(String argv[]) throws ClassNotFoundException, SQLException, ParserConfigurationException, TransformerException {
 
         
